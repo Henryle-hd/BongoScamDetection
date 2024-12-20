@@ -13,13 +13,13 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "BongoScam - SMS Scam Detection",
-  description: "Detect fraudulent SMS messages in Swahili using machine learning. Our AI model helps identify common scam patterns in Tanzania with 98.7% accuracy. Enter your SMS to check if it's safe or potentially fraudulent.",
-  keywords: ["SMS scam detection", "Tanzania", "Swahili", "machine learning", "fraud prevention", "BongoScam", "AI detection"],
-  authors: [{ name: "BongoScam" }],
+  title: "BongoScam - Ni tumie kwa namba hii sms Detection with Machine Learning",
+  description: "scammers often use SMS to steal money by pretending to be people you trust, such as close friends or relatives, or by continuing fake conversations about money transfers. These scams are commonly recognized with phrases like 'NI TUMIE KWA NAMBA HII', or they claim to be agents like Freemasons, landlords, or employers offering fake jobs.",
+  keywords: ["SMS scam detection", "Tanzania sms", "Swahili-sms", "machine learning in swahili", "nitumie kwa namba hii", "BongoScam", "AI detection",'swahili sms datset'],
+  authors: [{ name: "Henrylee Hd" }],
   openGraph: {
-    title: "BongoScam - SMS Scam Detection",
-    description: "Detect fraudulent SMS messages in Swahili using machine learning",
+    title: "BongoScam - Ni tumie kwa namba hii sms Detection with Machine Learning",
+    description: "scammers often use SMS to steal money by pretending to be people you trust, such as close friends or relatives, or by continuing fake conversations about money transfers. These scams are commonly recognized with phrases like 'NI TUMIE KWA NAMBA HII', or they claim to be agents like Freemasons, landlords, or employers offering fake jobs.",
     type: "website",
   },
   verification: {
