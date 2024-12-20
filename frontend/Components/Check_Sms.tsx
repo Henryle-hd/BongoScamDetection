@@ -1,6 +1,6 @@
   'use client'
   import { useState, useRef, useEffect } from 'react';
-  import { AlertCircle } from "lucide-react";
+  import { AlertCircle, Send } from "lucide-react";
 
   const CheckSms = () => {
       const [sms, setSms] = useState('');
@@ -41,58 +41,59 @@
       };
 
       return (
-          <div className="container max-w-md mx-auto mt-10">
+          <div className="container max-w-md mx-auto mt-10 px-4">
             {!prediction}
               <div className="mb-8">
-                  <h1 className="text-2xl font-bold text-center mb-4">Ingiza Ujumbe wa SMS</h1>
-                  <p className="text-center mb-4">Angalia kama ni ujumbe wa uwizi au halali</p>
-                  <form onSubmit={handleSubmit} className="flex items-center gap-2 bg-gray-100 p-2 rounded-full">
+                  <h1 className="text-3xl font-bold text-center mb-4 text-gray-800">Ingiza Ujumbe wa SMS</h1>
+                  <p className="text-center mb-6 text-gray-600">Angalia kama ni ujumbe wa uwizi au halali</p>
+                  <form onSubmit={handleSubmit} className="flex items-center gap-3 bg-white p-3 rounded-full shadow-lg border border-gray-200">
                       <input
-                          className="flex-1 bg-transparent border-none focus:ring-0 placeholder-gray-500 p-2 outline-none"
+                          className="flex-1 bg-transparent border-none focus:ring-0 placeholder-gray-400 p-2 outline-none text-gray-700"
                           placeholder="Andika ujumbe wako hapa..."
                           value={sms}
                           onChange={(e) => setSms(e.target.value)}
                       />
                       <button
+                      title='send'
                           type="submit"
-                          className="rounded-full w-10 h-10 p-0 bg-blue-500 hover:bg-blue-600 text-white"
+                          className="rounded-full w-12 h-12 flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white transition-colors duration-200 shadow-md"
                       >
-                          ↑
+                          <Send size={20} />
                       </button>
                   </form>
               </div>
 
-              <div className="bg-gray-100 rounded-[40px] p-6 shadow-xl">
-                  <div className="bg-gray-200 rounded-full p-2 w-40 mx-auto mb-4">
-                      <h2 className="text-center text-lg font-semibold">BongoScam</h2>
+              <div className="bg-white rounded-[30px] p-6 shadow-2xl border border-gray-100">
+                  <div className="bg-gradient-to-r from-blue-500 to-blue-600 rounded-full p-3 w-44 mx-auto mb-6 shadow-md">
+                      <h2 className="text-center text-lg font-bold text-white">BongoScam</h2>
                   </div>
 
-                  <div className="bg-white rounded-3xl p-4 min-h-[500px] flex flex-col">
-                      <div className="flex-1 space-y-4 overflow-y-auto max-h-[400px] mb-4">
+                  <div className="bg-gray-50 rounded-3xl p-5 min-h-[500px] flex flex-col shadow-inner">
+                      <div className="flex-1 space-y-4 overflow-y-auto max-h-[400px] mb-4 scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100">
                           {messages.map((message, index) => (
-                              <div key={index}>
+                              <div key={index} className="animate-fadeIn">
                                   <div
                                       className={`flex ${message.sender === 'user' ? 'justify-end' : 'justify-start'}`}
                                   >
                                       <div
-                                          className={`max-w-[80%] p-3 rounded-2xl ${
+                                          className={`max-w-[80%] p-4 rounded-2xl shadow-sm ${
                                               message.sender === 'user'
-                                                  ? 'bg-blue-500 text-white rounded-br-sm'
-                                                  : 'bg-gray-200 text-black rounded-bl-sm'
+                                                  ? 'bg-blue-600 text-white rounded-br-sm'
+                                                  : 'bg-white text-gray-800 rounded-bl-sm border border-gray-200'
                                           }`}
                                       >
                                           {message.text}
                                       </div>
                                   </div>
                                   {message.sender === 'ai' && (
-                                      <div className={`mt-2 mb-4 rounded-xl p-4 border ${message.text === 'scam' ? 'bg-red-50 border-red-200' : 'bg-green-50 border-green-200'}`}>
+                                      <div className={`mt-3 mb-5 rounded-xl p-5 border shadow-md ${message.text === 'scam' ? 'bg-red-50 border-red-200' : 'bg-green-50 border-green-200'}`}>
                                           <div className="flex items-center">
-                                              <AlertCircle className={message.text === 'scam' ? 'text-red-500' : 'text-green-500'} />
-                                              <h3 className="ml-2 font-semibold">
+                                              <AlertCircle className={`${message.text === 'scam' ? 'text-red-500' : 'text-green-500'} h-6 w-6`} />
+                                              <h3 className="ml-3 font-bold text-lg">
                                                   {message.text === 'scam' ? 'Tahadhari! Ujumbe wa Uwizi!' : 'Ujumbe Salama'}
                                               </h3>
                                           </div>
-                                          <p className="ml-2 mt-2">
+                                          <p className="ml-9 mt-2 text-gray-700">
                                               {message.text === 'scam' 
                                                   ? 'TAHADHARI: Huu ni ujumbe wa uwizi! Usifanye chochote! Usijibu wala kubofya viungo vyovyote!' 
                                                   : 'Hongera! Ujumbe huu ni salama na wa kuaminika. Unaweza kuendelea na mawasiliano'}
@@ -105,7 +106,7 @@
                       </div>
                   </div>
 
-                  <div className="mt-4 text-center text-xs text-gray-500">
+                  <div className="mt-6 text-center text-sm text-gray-500">
                       <p>Inalindwa na BongoScam • Uchambuzi wa AI</p>
                   </div>
               </div>
