@@ -1,6 +1,12 @@
 from flask import Flask, request
 from flask_cors import CORS
 import joblib
+from dotenv import load_dotenv
+import os
+load_dotenv()
+
+PORT=os.getenv('PORT')
+HOST=os.getenv('HOST')
 
 app = Flask(__name__)
 model=joblib.load('bongo_scam_predict.pkl')
@@ -27,4 +33,4 @@ def predict_bongo_scam():
             }
     
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host=HOST,port=PORT, debug=False)
