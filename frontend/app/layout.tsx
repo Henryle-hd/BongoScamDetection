@@ -21,6 +21,9 @@ export const metadata: Metadata = {
     title: "BongoScam - SMS Scam Detection",
     description: "Detect fraudulent SMS messages in Swahili using machine learning",
     type: "website",
+  },
+  verification: {
+    google: "lAT-DvDhCaiIWhZrdUQsyy0QYOAwkxuVzlFi0I7-4ns",
   }
 };
 
