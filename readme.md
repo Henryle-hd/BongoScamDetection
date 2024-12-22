@@ -2,6 +2,8 @@
 # BongoScam - Ni tumie kwa namba hii SMS Detection with Machine Learning
 
 ![alt text](sddefault.jpg)
+
+
 In Tanzania, scammers often use SMS to steal money by pretending to be people you trust, such as close friends or relatives, or by continuing fake conversations about money transfers. These scams are commonly recognized with phrases like ``"NI TUMIE KWA NAMBA HII"``, or they claim to be agents like Freemasons, landlords, or employers offering fake jobs.
 
 To address this problem, I created a dataset of 1,508 Tanzania Swahili-based SMS examples, showcasing various scam patterns. The dataset is available on Kaggle: [swahili-sms-detection](https://www.kaggle.com/datasets/henrydioniz/swahili-sms-detection-dataset/data), and this project also includes a basic machine learning model to detect and predict such fraudulent messages.
