@@ -49,9 +49,20 @@
               <h2 className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-purple-500 to-indigo-600 tracking-tight hover:scale-105 transition-transform duration-300">
                 SMS CHECKER
               </h2>
-              <p className="text-lg md:text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-indigo-500 mt-4 leading-relaxed hover:from-indigo-500 hover:to-purple-500 transition-all duration-300">
+              <p className="text-lg md:text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-indigo-500 mt-4 leading-relaxed hover:from-indigo-500 hover:to-purple-500 transition-all duration-300 text-left">
                 Scammers often use SMS to steal money by pretending to be people you trust, such as close friends or relatives, or by continuing fake conversations about money transfers. These scams are commonly recognized with phrases like NI TUMIE KWA NAMBA HII, or they claim to be agents like Freemasons, landlords, or employers offering fake jobs.
+
+                <br />
+                To address this problem, I created a dataset of 1,000 Tanzania Swahili-based SMS examples, showcasing various scam patterns. The dataset is available on <a href=" https://www.kaggle.com/datasets/henrydioniz/swahili-sms-detection-dataset/data">Kaggle</a>, and this project also includes a basic machine learning model to detect and predict such fraudulent messages.
               </p>
+              <div className="mt-8 space-y-4">
+                <a href="https://github.com/Henryle-hd/BongoScamDetection" target="_blank" rel="noopener noreferrer" className="inline-block px-6 py-3 bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-full font-bold hover:from-indigo-600 hover:to-purple-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
+                  View GitHub Project
+                </a>
+                <a href="https://www.kaggle.com/datasets/henrydioniz/swahili-sms-detection-dataset/data" target="_blank" rel="noopener noreferrer" className="block px-6 py-3 bg-white text-purple-600 rounded-full font-bold border-2 border-purple-600 hover:bg-purple-50 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
+                  Explore Dataset on Kaggle
+                </a>
+              </div>
             </div>
           </div>
 
@@ -59,7 +70,7 @@
           <div className="md:w-1/2 container max-w-md mx-auto mt-10 px-4 pb-8">
             {!prediction}
               <div className="mb-8 transform hover:scale-102 transition-all duration-300">
-                  <h1 className="text-3xl font-bold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600">Ingiza Ujumbe wa SMS</h1>
+                  <h1 className="text-3xl font-bold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600">Ingiza Ujumbe Uliopokea</h1>
                   
                   <form onSubmit={handleSubmit} className="flex items-center gap-3 bg-white p-4 rounded-full shadow-xl border border-purple-100 hover:shadow-2xl transition-all duration-300">
                       <input
