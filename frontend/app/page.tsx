@@ -70,14 +70,14 @@
 
           {/* right side */}
         <div className="md:w-1/2 flex items-center justify-center bg-gray-900">
-          <div className="w-full max-w-2xl px-8 pb-8">
+          <div className="w-full max-w-2xl px-2 md:px-8 pb-4 md:pb-8">
             {!prediction}
-              <div className="mb-8 transform hover:scale-102 transition-all duration-300">
-                  <h1 className="text-3xl font-bold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-indigo-400">Ingiza Ujumbe Uliopokea</h1>
+              <div className="mb-4 md:mb-8 transform hover:scale-102 transition-all duration-300">
+                  <h1 className="text-2xl md:text-3xl font-bold text-center mb-4 md:mb-6 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-indigo-400">Ingiza Ujumbe Uliopokea</h1>
                   
-                  <form onSubmit={handleSubmit} className="flex items-center gap-3 bg-gray-800 p-4 rounded-3xl shadow-lg border border-gray-700 hover:shadow-xl transition-all duration-300">
+                  <form onSubmit={handleSubmit} className="flex items-center gap-2 md:gap-3 bg-gray-800 p-2 md:p-4 rounded-2xl md:rounded-3xl shadow-lg border border-gray-700 hover:shadow-xl transition-all duration-300">
                       <input
-                          className="flex-1 bg-transparent border-none focus:ring-0 placeholder-purple-300 p-3 outline-none text-purple-300 text-lg"
+                          className="flex-1 bg-transparent border-none focus:ring-0 placeholder-purple-300 p-2 md:p-3 outline-none text-purple-300 text-base md:text-lg"
                           placeholder="Weka ujumbe wako hapa..."
                           value={sms}
                           onChange={(e) => setSms(e.target.value)}
@@ -85,27 +85,27 @@
                       <button
                           title='send'
                           type="submit"
-                          className="rounded-3xl w-14 h-14 flex items-center justify-center bg-gradient-to-r from-purple-500 to-indigo-500 hover:from-indigo-500 hover:to-purple-500 text-white transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+                          className="rounded-2xl md:rounded-3xl w-10 h-10 md:w-14 md:h-14 flex items-center justify-center bg-gradient-to-r from-purple-500 to-indigo-500 hover:from-indigo-500 hover:to-purple-500 text-white transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
                       >
-                        <Send size={24} />
+                        <Send size={20} className="md:w-6 md:h-6" />
                       </button>
                   </form>
               </div>
 
-              <div className="bg-gray-800 rounded-[40px] p-8 shadow-2xl border border-gray-700 hover:shadow-3xl transition-all duration-300">
-                  <div className="bg-gradient-to-r from-purple-500 to-indigo-500 rounded-full p-4 w-48 mx-auto mb-5 shadow-lg transform scale-95 hover:scale-100 transition-all duration-300">
-                      <h2 className="text-center text-xl font-bold text-white"></h2>
+              <div className="bg-gray-800 rounded-[20px] md:rounded-[40px] p-3 md:p-8 shadow-2xl border border-gray-700 hover:shadow-3xl transition-all duration-300">
+                  <div className="bg-gradient-to-r from-purple-500 to-indigo-500 rounded-full p-3 md:p-4 w-36 md:w-48 mx-auto mb-3 md:mb-5 shadow-lg transform scale-95 hover:scale-100 transition-all duration-300">
+                      <h2 className="text-center text-lg md:text-xl font-bold text-white"></h2>
                   </div>
 
-                  <div className="bg-gradient-to-br from-gray-900 to-gray-900 rounded-3xl p-6 min-h-[500px] flex flex-col shadow-inner">
-                      <div className="flex-1 space-y-4 overflow-y-auto max-h-[480px] mb-1 scrollbar-thin scrollbar-thumb-purple-300 scrollbar-track-gray-700 no-scrollbar">
+                  <div className="bg-gradient-to-br from-gray-900 to-gray-900 rounded-2xl md:rounded-3xl p-3 md:p-6 min-h-[400px] md:min-h-[500px] flex flex-col shadow-inner">
+                      <div className="flex-1 space-y-3 md:space-y-4 overflow-y-auto max-h-[400px] md:max-h-[480px] mb-1 scrollbar-thin scrollbar-thumb-purple-300 scrollbar-track-gray-700 no-scrollbar">
                           {messages.map((message, index) => (
                               <div key={index} className="animate-fadeIn transition-all duration-300">
                                   <div
                                       className={`flex ${message.sender !== 'user' ? 'justify-end' : 'justify-start'}`}
                                   >
                                       <div
-                                          className={`max-w-[80%] p-4 rounded-2xl shadow-md hover:shadow-lg transition-all  text-sm md:text-xl duration-300 ${
+                                          className={`max-w-[80%] p-3 md:p-4 rounded-2xl shadow-md hover:shadow-lg transition-all text-xs md:text-sm lg:text-xl duration-300 ${
                                               message.sender !== 'user'
                                                   ? 'bg-gradient-to-r from-purple-500 to-indigo-500 text-white rounded-br-sm'
                                                   : 'bg-gray-700 text-purple-200 rounded-bl-sm border border-gray-600'
@@ -115,14 +115,14 @@
                                       </div>
                                   </div>
                                   {message.sender === 'ai' && (
-                                      <div className={`mt-4 mb-6 rounded-2xl p-6 border shadow-lg transition-all duration-300 hover:shadow-xl ${message.text === 'scam' ? 'bg-red-900/25 border-red-700' : 'bg-green-900/25 border-green-700'}`}>
+                                      <div className={`mt-3 md:mt-4 mb-4 md:mb-6 rounded-xl md:rounded-2xl p-3 md:p-6 border shadow-lg transition-all duration-300 hover:shadow-xl ${message.text === 'scam' ? 'bg-red-900/25 border-red-700' : 'bg-green-900/25 border-green-700'}`}>
                                           <div className="flex items-center">
-                                              <AlertCircle className={`${message.text === 'scam' ? 'text-red-400' : 'text-green-400'} h-7 w-7`} />
-                                              <h3 className="ml-4 font-bold text-lg text-gray-200">
+                                              <AlertCircle className={`${message.text === 'scam' ? 'text-red-400' : 'text-green-400'} h-5 w-5 md:h-7 md:w-7`} />
+                                              <h3 className="ml-2 md:ml-4 font-bold text-base md:text-lg text-gray-200">
                                                   {message.text === 'scam' ? 'Ujumbe Sio Salama!' : 'Ujumbe Salama'}
                                               </h3>
                                           </div>
-                                          <p className="ml-1 mt-3 text-gray-300 leading-relaxed text-sm md:text-base">
+                                          <p className="ml-1 mt-2 md:mt-3 text-gray-300 leading-relaxed text-xs md:text-sm lg:text-base">
                                               {message.text === 'scam'
                                                   ? 'TAHADHARI: Huu ni kma ujumbe wa uwizi! Usifanye chochote! Usijibu wala kubofya Link yoyote!'
                                                   : 'Ujumbe huu ni salama na wa kuaminika. Unaweza kuendelea na mawasiliano'}
@@ -135,8 +135,8 @@
                       </div>
                   </div>
 
-                  <div className="mt-8 text-center">
-                      <p className="text-base text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-indigo-400 font-semibold">Protected by BongoScam • ML Project</p>
+                  <div className="mt-4 md:mt-8 text-center">
+                      <p className="text-sm md:text-base text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-indigo-400 font-semibold">Protected by BongoScam • ML Project</p>
                   </div>
               </div>
           </div>
