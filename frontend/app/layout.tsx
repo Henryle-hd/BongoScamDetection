@@ -13,14 +13,30 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "BongoScam - Ni tumie kwa namba hii sms Detection with Machine Learning",
-  description: "scammers often use SMS to steal money by pretending to be people you trust, such as close friends or relatives, or by continuing fake conversations about money transfers. These scams are commonly recognized with phrases like 'NI TUMIE KWA NAMBA HII', or they claim to be agents like Freemasons, landlords, or employers offering fake jobs.",
-  keywords: ["SMS scam detection", "Tanzania sms", "Swahili-sms", "machine learning in swahili", "nitumie kwa namba hii", "BongoScam", "AI detection",'swahili sms datset'],
+  title: "BongoScam - SMS Checker | Swahili SMS Scam Detection",
+  description: "Tanzania scammers use SMS kuiba pesa by pretending to be watu unaowaaminini, like marafiki wa karibu or ndugu, or by continuing fake mazungumzo about pesa transfers. Common scam phrases like 'NI TUMIE KWA NAMBA HII', fake Freemasons, waganga, landlords, or fake job offers. Using Machine Learning for Swahili SMS detection.",
+  keywords: [
+    "SMS scam detection",
+    "Tanzania SMS",
+    "Swahili SMS dataset",
+    "machine learning Swahili",
+    "nitumie kwa namba hii",
+    "BongoScam",
+    "AI detection",
+    "ujumbe detection",
+    "Tanzania scam",
+    "SMS checker",
+    "Swahili ML model",
+    "fraud detection",
+    "ujumbe salama",
+    "scam prediction",
+    "Kaggle dataset",
+    "Tanzania cybersecurity"
+  ],
   authors: [{ name: "Henrylee Hd" }],
   openGraph: {
-    title: "BongoScam - Ni tumie kwa namba hii sms Detection with Machine Learning",
-    description: "scammers often use SMS to steal money by pretending to be people you trust, such as close friends or relatives, or by continuing fake conversations about money transfers. These scams are commonly recognized with phrases like 'NI TUMIE KWA NAMBA HII', or they claim to be agents like Freemasons, landlords, or employers offering fake jobs.",
-    type: "website",
+    title: "BongoScam - SMS Checker | Swahili SMS Scam Detection",
+    description: "Scammers in Tanzania use SMS to steal money by pretending to be people you trust, like close friends or relatives, or by continuing fake conversations about money transfers. Common scam phrases like 'SEND TO THIS NUMBER', fake Freemasons, traditional healers, landlords, or fake job offers. Using Machine Learning for SMS detection. Walaghai Tanzania hutumia SMS kuiba pesa kwa kujifanya ni watu unaowaaminini, kama marafiki wa karibu au ndugu, au kwa kuendeleza mazungumzo ya uongo kuhusu kutuma pesa. Maneno ya kawaida ya utapeli kama 'NI TUMIE KWA NAMBA HII', Freemasons bandia, waganga, wapangaji, au ofa za kazi za uongo. Kutumia Machine Learning kugundua SMS za ulaghai.",    type: "website",
   },
   verification: {
     google: "lAT-DvDhCaiIWhZrdUQsyy0QYOAwkxuVzlFi0I7-4ns",

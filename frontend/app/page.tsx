@@ -131,11 +131,12 @@
                                                   {message.text === 'scam' ? 'Ujumbe Sio Salama!' : 'Ujumbe Salama'}
                                               </h3>
                                           </div>
-                                          <p className="ml-1 mt-2 md:mt-3 text-gray-300 leading-relaxed text-xs md:text-sm lg:text-base">
-                                              {message.text === 'scam'
-                                                  ? 'TAHADHARI: Huu ni kma ujumbe wa uwizi! Usifanye chochote! Usijibu wala kubofya Link yoyote!'
-                                                  : 'Ujumbe huu ni salama na wa kuaminika. Unaweza kuendelea na mawasiliano'}
-                                          </p>
+                                         <p className="ml-1 mt-2 md:mt-3 text-gray-300 leading-relaxed text-xs md:text-sm lg:text-base">
+    {message.text === 'scam'
+        ? 'Ujumbe huu unaweza kuwa wa ulaghai. Epuka kujibu au kubofya link yoyote!'
+        : 'Ujumbe huu unaonekana kuwa salama. Unaweza kuendelea na mawasiliano.'}
+</p>
+
                                       </div>
                                   )}
                               </div>
