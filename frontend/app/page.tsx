@@ -6,6 +6,7 @@
       const [sms, setSms] = useState('');
       const [prediction, setPrediction] = useState('');
       const [messages, setMessages] = useState<{ sender: string, text: string }[]>([]);
+      const [isLoading, setIsLoading] = useState(false);
       const messagesEndRef = useRef<HTMLDivElement>(null);
 
       const scrollToBottom = () => {
@@ -19,6 +20,7 @@
       const handleSubmit = async (e: React.FormEvent) => {
           e.preventDefault();
           if (!sms.trim()) return;
+          setIsLoading(true);
           setMessages(prev => [...prev, { sender: 'user', text: sms }]);
         
           try {
@@ -35,6 +37,8 @@
               setMessages(prev => [...prev, { sender: 'ai', text: aiResponse }]);
           } catch (error) {
               console.error('Error:', error);
+          } finally {
+              setIsLoading(false);
           }
         
           setSms('');
@@ -45,7 +49,7 @@
           {/* left side */}
           <div className="md:w-1/2 flex items-center justify-center py-8 bg-gradient-to-b from-gray-800 to-gray-900">
             <div className="text-center max-w-2xl px-8">
-              <h1 className='text-6xl md:text-7xl p-5'>🛡️</h1>
+              <h1 className='text-6xl md:text-7xl p-5 text-white'>🛡️|📥</h1>
               <h2 className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-purple-300 to-indigo-400 tracking-tight mb-8 hover:scale-105 transition-transform duration-300">
                 SMS CHECKER
               </h2>
@@ -85,9 +89,14 @@
                       <button
                           title='send'
                           type="submit"
+                          disabled={isLoading}
                           className="rounded-2xl md:rounded-3xl w-10 h-10 md:w-14 md:h-14 flex items-center justify-center bg-gradient-to-r from-purple-500 to-indigo-500 hover:from-indigo-500 hover:to-purple-500 text-white transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
                       >
-                        <Send size={20} className="md:w-6 md:h-6" />
+                        {isLoading ? (
+                          <div className="animate-spin rounded-full h-5 w-5 md:h-6 md:w-6 border-2 border-white border-t-transparent" />
+                        ) : (
+                          <Send size={20} className="md:w-6 md:h-6" />
+                        )}
                       </button>
                   </form>
               </div>
@@ -136,7 +145,7 @@
                   </div>
 
                   <div className="mt-4 md:mt-8 text-center">
-                      <p className="text-sm md:text-base text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-indigo-400 font-semibold">Protected by BongoScam • ML Project</p>
+                      <p className="text-sm md:text-base text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-indigo-400 font-semibold">Protected by BongoScam • Tanzania</p>
                   </div>
               </div>
           </div>
