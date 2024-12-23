@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import smsui from '@/public/smsui.png'
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,13 +31,28 @@ export const metadata: Metadata = {
     "fraud detection",
     "ujumbe salama",
     "scam prediction",
-    "Kaggle dataset",
-    "Tanzania cybersecurity"
+    "Kaggle dataset swahili",
+    "Tanzania cybersecurity",
+    "Tanzania SMS scams",
+    "Swahili SMS scams",
+    "bongo scam",
+    "sms checker",
+    "sms scam detection",
+    "sms scam prediction",
+    "sms scam detection swahili",
+    "meseji za uwizi",
   ],
   authors: [{ name: "Henrylee Hd" }],
   openGraph: {
     title: "BongoScam - SMS Checker | Swahili SMS Scam Detection",
-    description: "Scammers in Tanzania use SMS to steal money by pretending to be people you trust, like close friends or relatives, or by continuing fake conversations about money transfers. Common scam phrases like 'SEND TO THIS NUMBER', fake Freemasons, traditional healers, landlords, or fake job offers. Using Machine Learning for SMS detection. Walaghai Tanzania hutumia SMS kuiba pesa kwa kujifanya ni watu unaowaaminini, kama marafiki wa karibu au ndugu, au kwa kuendeleza mazungumzo ya uongo kuhusu kutuma pesa. Maneno ya kawaida ya utapeli kama 'NI TUMIE KWA NAMBA HII', Freemasons bandia, waganga, wapangaji, au ofa za kazi za uongo. Kutumia Machine Learning kugundua SMS za ulaghai.",    type: "website",
+    description: "Scammers in Tanzania use SMS to steal money by pretending to be people you trust, like close friends or relatives, or by continuing fake conversations about money transfers. Common scam phrases like 'SEND TO THIS NUMBER', fake Freemasons, traditional healers, landlords, or fake job offers. Using Machine Learning for SMS detection. Walaghai Tanzania hutumia SMS kuiba pesa kwa kujifanya ni watu unaowaaminini, kama marafiki wa karibu au ndugu, au kwa kuendeleza mazungumzo ya uongo kuhusu kutuma pesa. Maneno ya kawaida ya utapeli kama 'NI TUMIE KWA NAMBA HII', Freemasons bandia, waganga, wapangaji, au ofa za kazi za uongo. Kutumia Machine Learning kugundua SMS za ulaghai.",    
+    type: "website",
+    images: [{
+      url: smsui.src,
+      width: 1200,
+      height: 630,
+      alt: "BongoScam SMS Checker Preview"
+    }]
   },
   verification: {
     google: "lAT-DvDhCaiIWhZrdUQsyy0QYOAwkxuVzlFi0I7-4ns",
